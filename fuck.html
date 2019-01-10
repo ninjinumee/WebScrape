@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vee-validate@2.1.0-beta.9/dist/vee-validate.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vee-validate@2.1.0-beta.9/dist/locale/ja.js"></script>
+    <script>
+        // 日本語を設定する
+        VeeValidate.Validator.localize('ja');
+        Vue.use(VeeValidate);
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <h4>option: numeric and max:length</h4>
+        <input v-validate="'required'" v-model="message" name="メッセージ" type="text">
+        <span>{{ errors.first('メッセージ') }}</span>
+
+        <button type="button" class="btn btn-primary" v-on:click="postApp">
+            作成する
+        </button>
+    </div>
+    <script src="app.js">
+    </script>
+</body>
+<html>
